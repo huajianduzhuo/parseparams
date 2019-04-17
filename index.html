@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.bootcss.com/qs/6.5.1/qs.min.js"></script>
+  <title>参数转化为json</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 95%;
+      margin: 0 auto;
+    }
+    button {
+      margin: 0 20px;
+    }
+    textarea {
+      flex: 1;
+      height: 90%;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <textarea name="source" id="source" cols="30" rows="10" placeholder="输入需要转化的数据"></textarea>
+    <button onclick="parseParams()">转化</button>
+    <textarea name="target" id="target" cols="30" rows="10"></textarea>
+  </div>
+</body>
+<script>
+  const source = document.getElementById('source')
+  const target = document.getElementById('target')
+  function parseParams () {
+    const data = Qs.parse(source.value)
+    const jsonData = JSON.stringify(data, null, 2)
+    target.value = jsonData
+  }
+</script>
+</html>
