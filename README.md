@@ -1,5 +1,7 @@
 # 将参数转化为 JSON 格式数据
 
+[打开页面](http://mengyujing.com/parseparams/)
+
 提供了浏览器端和 node 端两种方式
 
 * 浏览器端直接打开 index.html
